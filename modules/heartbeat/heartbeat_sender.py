@@ -24,7 +24,9 @@ class HeartbeatSender:
         """
         Falliable create (instantiation) method to create a HeartbeatSender object.
         """
-        pass  # Create a HeartbeatSender object
+        if connection is None:
+            return (False, none)
+        return (True, cls(HeartbeatSender.__private_key, connection, args))
 
     def __init__(
         self,
@@ -35,7 +37,7 @@ class HeartbeatSender:
         assert key is HeartbeatSender.__private_key, "Use create() method"
 
         # Do any intializiation here
-
+        self._connection = connection
     def run(
         self,
         args,  # Put your own arguments here
@@ -43,7 +45,14 @@ class HeartbeatSender:
         """
         Attempt to send a heartbeat message.
         """
-        pass  # Send a heartbeat message
+        # Send a heartbeat message
+        self._connection.mav.heartbeat_send(
+            mavutil.mavlink.MAV_TYPE_GCS, 
+            mavutil.mavlink.MAV_AUTOPILOT_INVALID,
+            0, # base_mode
+            0, # custom_mode
+            mavutil.mavlink.MAV_STATE_ACTIVE,
+        )
 
 
 # =================================================================================================
