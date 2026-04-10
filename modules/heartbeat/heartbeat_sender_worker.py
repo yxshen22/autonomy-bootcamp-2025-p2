@@ -56,8 +56,10 @@ def heartbeat_sender_worker(
     # Main loop: do work.
     while not controller.is_exit_requested():
         controller.check_pause()
+        start = time.time()
         sender.run(heartbeat_period)
-        time.sleep(heartbeat_period)
+        elapsed = time.time() - start
+        time.sleep(max(0, heartbeat_period - elapsed)) # sleep the remaining time instead of 1.0s to keep period as close as possible to 1.0s
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

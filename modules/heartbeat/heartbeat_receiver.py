@@ -29,7 +29,7 @@ class HeartbeatReceiver:
         Falliable create (instantiation) method to create a HeartbeatReceiver object.
         """
         if connection is None or local_logger is None:
-            return false, None
+            return False, None
         return True, cls(cls.__private_key, connection, heartbeat_period, disconnect_threshold, local_logger)
 
     def __init__(
@@ -51,23 +51,24 @@ class HeartbeatReceiver:
     def run(
         self,
         heartbeat_period: float | None = None,
-    ):
+    ) -> str:
         """
         Attempt to recieve a heartbeat message.
         If disconnected for over a threshold number of periods,
         the connection is considered disconnected.
         """
         period = heartbeat_period if heartbeat_period is not None else self._heartbeat_period
-        msg = self.connection.recv_match(type="HEARTBEAT", blocking=True, timeout=period)
+        msg = self._connection.recv_match(type="HEARTBEAT", blocking=True, timeout=period)
 
         if msg and msg.get_type() == "HEARTBEAT":
             self._missed_count = 0
-            return True
+            return "Connected"
         
         self._missed_count += 1
-        if self.missed_count >= self._disconnect_threshold:
-            return False
-        return True
+        self._logger.warning(f"Missed heartbeat {self._missed_count}/{self._disconnect_threshold}", True)
+        if self._missed_count >= self._disconnect_threshold:
+            return "Disconnected"
+        return "Connected"
 
 
 # =================================================================================================

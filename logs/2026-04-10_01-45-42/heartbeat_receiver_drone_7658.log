@@ -1,0 +1,13 @@
+01:45:42: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | main | 42] Logger initialized
+01:45:42: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:43: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:44: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:45: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:46: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:55: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:56: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:57: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:58: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:45:59: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:46:01: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | send_heartbeats | 59] Drone: Sent a heartbeat
+01:46:02: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/mock_drones/heartbeat_receiver_drone.py | main | 79] Passesd!

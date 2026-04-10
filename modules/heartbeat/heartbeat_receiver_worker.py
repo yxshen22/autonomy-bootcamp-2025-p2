@@ -60,10 +60,10 @@ def heartbeat_receiver_worker(
         return
     
     # Main loop: do work.
-    while not controller.is_exist_requested():
+    while not controller.is_exit_requested():
         controller.check_pause()
-        connected = receiver.run(heartbeat_period)
-        output_queue.queue.put(connected)
+        status = receiver.run(heartbeat_period)
+        output_queue.queue.put(status)
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
