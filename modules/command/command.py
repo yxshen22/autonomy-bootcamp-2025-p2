@@ -37,7 +37,9 @@ class Command:  # pylint: disable=too-many-instance-attributes
         cls,
         connection: mavutil.mavfile,
         target: Position,
-        args,  # Put your own arguments here
+        command_queue,
+        output_queue,
+        command_period: float, # seconds between decisions
         local_logger: logger.Logger,
     ):
         """
@@ -50,16 +52,23 @@ class Command:  # pylint: disable=too-many-instance-attributes
         key: object,
         connection: mavutil.mavfile,
         target: Position,
-        args,  # Put your own arguments here
+        command_queue,
+        output_queue,
+        command_period: float,
         local_logger: logger.Logger,
     ) -> None:
         assert key is Command.__private_key, "Use create() method"
 
-        # Do any intializiation here
+        self._connection = connection
+        self._target = target
+        self._command_queue = command_queue
+        self._output_queue = output_queue
+        self._command_period = command_period
+        self._logger = local_logger
 
     def run(
         self,
-        args,  # Put your own arguments here
+        telemetry_data: telemetry.TelemetryData
     ):
         """
         Make a decision based on received telemetry data.

@@ -18,13 +18,16 @@ from ..common.modules.logger import logger
 # =================================================================================================
 def telemetry_worker(
     connection: mavutil.mavfile,
-    args,  # Place your own arguments here
-    # Add other necessary worker arguments here
+    telemetry_timeout_period: float,
+    output_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    controller: worker_controller.WorkerController,
 ) -> None:
     """
     Worker process.
 
-    args... describe what the arguments are
+    telemetry_timeout_period: max wait time to receive both messages
+    output_queue: queue to push TelemetryData into
+    controller: WorkerController used to pause/stop the worker
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
@@ -47,9 +50,19 @@ def telemetry_worker(
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Instantiate class object (telemetry.Telemetry)
-
+    result, telemetry_obj = telemetry.Telemetry.create(
+        connection, 
+        telemetry_timeout_period, 
+        local_logger
+    )
+    if not result or telemetry_obj is None:
+        local_logger.error("Failed to create Telemetry object", True)
+        return
     # Main loop: do work.
-
+    while not controller.is_exit_requested():
+        controller.check_pause()
+        data = telemetry_obj.run(telemetry_timeout_period)
+        output_queue.queue.put(data)
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

@@ -84,7 +84,7 @@ class Telemetry:
         """
         if connection is None or local_logger is None:
             return False, None
-        return True, cls(cls.__privatekey, connection, telemetry_timeout_period, local_logger)
+        return True, cls(cls.__private_key, connection, telemetry_timeout_period, local_logger)
 
     def __init__(
         self,
@@ -97,7 +97,7 @@ class Telemetry:
 
         self._connection = connection
         self._telemetry_timeout_period = telemetry_timeout_period
-        self._local_logger = local_logger
+        self._logger = local_logger
 
     def run(
         self,
