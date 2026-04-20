@@ -19,13 +19,24 @@ from ..common.modules.logger import logger
 def command_worker(
     connection: mavutil.mavfile,
     target: command.Position,
-    args,  # Place your own arguments here
-    # Add other necessary worker arguments here
+    height_tolerance: float,
+    angle_tolerance: float,
+    z_speed: float,
+    turning_speed: float,
+    input_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    output_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    controller: worker_controller.WorkerController,
 ) -> None:
     """
     Worker process.
 
-    args... describe what the arguments are
+    height_tolerance: altitude tolerance in meters
+    angle_tolernace: angle tolerance in degrees
+    z_speed: m/s
+    turning_speed: deg/s
+    input_queue: TelemetryData inputs
+    output_queue: string outputs
+    controller: pause/stop
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
@@ -48,8 +59,29 @@ def command_worker(
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Instantiate class object (command.Command)
+    result, command_obj = command.Command.create(
+        connection,
+        target,
+        height_tolerance,
+        angle_tolerance,
+        z_speed,
+        turning_speed,
+        local_logger,
+    )
+    if not result or command_obj is None:
+        local_logger.error("Failed to create Command object", True)
+        return
 
     # Main loop: do work.
+    while not controller.is_exit_requested():
+        controller.check_pause()
+        try:  # use timeout so worker can notice controller.request_exit() otherwise it'll block forever
+            telemetry_data = input_queue.queue.get()
+        except Exception:
+            continue
+        output = command_obj.run(telemetry_data)
+        if output is not None:
+            output_queue.queue.put(output)
 
 
 # =================================================================================================

@@ -51,9 +51,7 @@ def telemetry_worker(
     # =============================================================================================
     # Instantiate class object (telemetry.Telemetry)
     result, telemetry_obj = telemetry.Telemetry.create(
-        connection, 
-        telemetry_timeout_period, 
-        local_logger
+        connection, telemetry_timeout_period, local_logger
     )
     if not result or telemetry_obj is None:
         local_logger.error("Failed to create Telemetry object", True)
@@ -63,6 +61,7 @@ def telemetry_worker(
         controller.check_pause()
         data = telemetry_obj.run(telemetry_timeout_period)
         output_queue.queue.put(data)
+
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

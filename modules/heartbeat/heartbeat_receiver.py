@@ -30,7 +30,9 @@ class HeartbeatReceiver:
         """
         if connection is None or local_logger is None:
             return False, None
-        return True, cls(cls.__private_key, connection, heartbeat_period, disconnect_threshold, local_logger)
+        return True, cls(
+            cls.__private_key, connection, heartbeat_period, disconnect_threshold, local_logger
+        )
 
     def __init__(
         self,
@@ -63,9 +65,11 @@ class HeartbeatReceiver:
         if msg and msg.get_type() == "HEARTBEAT":
             self._missed_count = 0
             return "Connected"
-        
+
         self._missed_count += 1
-        self._logger.warning(f"Missed heartbeat {self._missed_count}/{self._disconnect_threshold}", True)
+        self._logger.warning(
+            f"Missed heartbeat {self._missed_count}/{self._disconnect_threshold}", True
+        )
         if self._missed_count >= self._disconnect_threshold:
             return "Disconnected"
         return "Connected"

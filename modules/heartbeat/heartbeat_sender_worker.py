@@ -52,14 +52,17 @@ def heartbeat_sender_worker(
     if not result or sender is None:
         local_logger.error("Failed to create HeartbeatSender", True)
         return
-    
+
     # Main loop: do work.
     while not controller.is_exit_requested():
         controller.check_pause()
         start = time.time()
         sender.run(heartbeat_period)
         elapsed = time.time() - start
-        time.sleep(max(0, heartbeat_period - elapsed)) # sleep the remaining time instead of 1.0s to keep period as close as possible to 1.0s
+        time.sleep(
+            max(0, heartbeat_period - elapsed)
+        )  # sleep the remaining time instead of 1.0s to keep period as close as possible to 1.0s
+
 
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑

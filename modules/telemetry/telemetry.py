@@ -120,15 +120,17 @@ class Telemetry:
         while True:
             elapsed = time.time() - start
             if elapsed >= timeout:
-                self._logger.warning("Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED", True)
-                
+                self._logger.warning(
+                    "Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED", True
+                )
+
                 # restart collection window
                 start = time.time()
                 att_msg = None
                 pos_msg = None
-            
+
             remaining = max(0.0, timeout - (time.time() - start))
-            
+
             # Read MAVLink message LOCAL_POSITION_NED (32)
             # Read MAVLink message ATTITUDE (30)
             msg = self._connection.recv_match(
@@ -145,7 +147,7 @@ class Telemetry:
                 att_msg = msg
             elif msg.get_type() == "LOCAL_POSITION_NED":
                 pos_msg = msg
-            
+
             if att_msg is not None and pos_msg is not None:
                 time_since_boot = max(att_msg.time_boot_ms, pos_msg.time_boot_ms)
 
@@ -163,7 +165,6 @@ class Telemetry:
                     roll_speed=att_msg.rollspeed,
                     pitch_speed=att_msg.pitchspeed,
                     yaw_speed=att_msg.yawspeed,
-
                 )
 
 

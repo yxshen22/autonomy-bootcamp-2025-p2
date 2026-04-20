@@ -1,0 +1,10 @@
+16:26:25: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/common/modules/logger/logger_main_setup.py | setup_main_logger | 62] main logger initialized
+16:26:25: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | main | 132] Connected!
+16:26:25: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 77] CHANGE ALTITTUDE: 1
+16:26:25: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 77] CHANGE ALTITTUDE: -1
+16:26:28: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 77] CHANGE YAW: 63.43494882292201
+16:26:29: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 77] CHANGE YAW: 90.0
+16:26:29: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 77] CHANGE YAW: 116.56505117707799
+16:26:30: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 77] CHANGE YAW: 45.0
+16:26:30: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 77] CHANGE YAW: 63.43494882292201
+16:26:31: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/tests/integration/test_command.py | read_queue | 77] CHANGE YAW: 90.0

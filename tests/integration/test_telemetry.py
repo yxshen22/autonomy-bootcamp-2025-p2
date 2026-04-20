@@ -72,7 +72,6 @@ def read_queue(
             main_logger.info(f"Telemetry: {data}")
         except Exception:
             pass
-    
 
 
 # =================================================================================================

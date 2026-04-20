@@ -1,0 +1,14 @@
+01:09:28: [INFO] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry_worker.py | telemetry_worker | 47] Logger initialized
+01:09:33: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:34: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:35: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:41: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:42: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:43: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:44: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:45: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:46: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:47: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:48: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:49: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED
+01:09:50: [WARNING] [/Users/everest/warg_autonomy_onboarding/autonomy-bootcamp-2025-p2/modules/telemetry/telemetry.py | run | 123] Telemetry timeout: did not receive both ATTITUDE and LOCAL_POSITION_NED

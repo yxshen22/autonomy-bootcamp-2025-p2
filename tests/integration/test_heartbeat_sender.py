@@ -51,6 +51,7 @@ def stop(args) -> None:
     controller: worker_controller.WorkerController = args["controller"]
     controller.request_exit()
 
+
 # =================================================================================================
 #                            ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
 # =================================================================================================
@@ -93,14 +94,16 @@ def main() -> int:
     # Create a worker controller for your worker
     controller = worker_controller.WorkerController()
 
-    args = {"controller": controller,}
+    args = {
+        "controller": controller,
+    }
 
     # Just set a timer to stop the worker after a while, since the worker infinite loops
     threading.Timer(HEARTBEAT_PERIOD * NUM_TRIALS, stop, (args,)).start()
 
     heartbeat_sender_worker.heartbeat_sender_worker(
-        connection, 
-        HEARTBEAT_PERIOD, 
+        connection,
+        HEARTBEAT_PERIOD,
         controller,
     )
     # =============================================================================================
