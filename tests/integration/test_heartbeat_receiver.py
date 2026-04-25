@@ -63,11 +63,12 @@ def read_queue(
     """
     Read and print the output queue.
     """
+    output_queue: queue_proxy_wrapper.QueueProxyWrapper = args["output_queue"]
     while not args["controller"].is_exit_requested():
         try:
             status = output_queue.queue.get(timeout=1.0)
             main_logger.info(f"Receiver status: {status}")
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             pass
 
 

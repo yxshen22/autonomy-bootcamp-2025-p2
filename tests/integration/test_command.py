@@ -74,7 +74,7 @@ def read_queue(
         try:
             msg = output_queue.queue.get(timeout=1.0)
             main_logger.info(msg)
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             pass
 
 
