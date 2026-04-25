@@ -78,7 +78,7 @@ class Telemetry:
         connection: mavutil.mavfile,
         telemetry_timeout_period,
         local_logger: logger.Logger,
-    ):
+    ) -> tuple[bool, "Telemetry | None"]:
         """
         Falliable create (instantiation) method to create a Telemetry object.
         """
@@ -102,7 +102,7 @@ class Telemetry:
     def run(
         self,
         telemetry_timeout_period: float | None = None,
-    ):
+    ) -> TelemetryData | None:
         """
         Receive LOCAL_POSITION_NED and ATTITUDE messages from the drone,
         combining them together to form a single TelemetryData object.

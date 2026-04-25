@@ -48,7 +48,7 @@ def start_drone() -> None:
 # =================================================================================================
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
-def stop(args) -> None:
+def stop(args: dict[str, object]) -> None:
     """
     Stop the workers.
     """
@@ -57,7 +57,7 @@ def stop(args) -> None:
 
 
 def read_queue(
-    args,  # Add any necessary arguments
+    args: dict[str, object],
     main_logger: logger.Logger,
 ) -> None:
     """

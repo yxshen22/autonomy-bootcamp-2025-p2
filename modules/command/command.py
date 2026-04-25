@@ -42,7 +42,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
         z_speed: float,
         turning_speed: float,
         local_logger: logger.Logger,
-    ):
+    ) -> tuple[bool, "Command | None"]:
         """
         Falliable create (instantiation) method to create a Command object.
         """
@@ -86,7 +86,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
         self._sum_vy = 0.0
         self._sum_vz = 0.0
 
-    def run(self, telemetry_data: telemetry.TelemetryData):
+    def run(self, telemetry_data: telemetry.TelemetryData) -> str | None:
         """
         Make a decision based on received telemetry data.
         """
