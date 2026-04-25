@@ -53,9 +53,7 @@ def start_drone() -> None:
 # =================================================================================================
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
-def stop(
-    args: dict[str, object]
-) -> None:
+def stop(args: dict[str, object]) -> None:
     """
     Stop the workers.
     """
@@ -64,7 +62,7 @@ def stop(
 
 
 def read_queue(
-    args: dict[str, object], 
+    args: dict[str, object],
     main_logger: logger.Logger,
 ) -> None:
     """
@@ -80,9 +78,7 @@ def read_queue(
             pass
 
 
-def put_queue(
-    args: dict[str, object]
-) -> None:
+def put_queue(args: dict[str, object]) -> None:
     """
     Place mocked inputs into the input queue periodically with period TELEMETRY_PERIOD.
     """
