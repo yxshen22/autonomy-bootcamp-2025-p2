@@ -77,7 +77,7 @@ def command_worker(
         controller.check_pause()
         try:  # use timeout so worker can notice controller.request_exit() otherwise it'll block forever
             telemetry_data = input_queue.queue.get()
-        except Exception:
+        except input_queue.queue.Empty:
             continue
         output = command_obj.run(telemetry_data)
         if output is not None:

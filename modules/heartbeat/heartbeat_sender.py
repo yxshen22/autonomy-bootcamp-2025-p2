@@ -39,7 +39,7 @@ class HeartbeatSender:
         """
         Attempt to send a heartbeat message.
         """
-        period = heartbeat_period if heartbeat_period is not None else self._heartbeat_period
+
         # Send a heartbeat message
         self._connection.mav.heartbeat_send(
             mavutil.mavlink.MAV_TYPE_GCS,
