@@ -35,7 +35,7 @@ class HeartbeatSender:
         self._connection = connection
         self._heartbeat_period = heartbeat_period
 
-    def run(self, heartbeat_period: float) -> None:
+    def run(self, _heartbeat_period: float) -> None:
         """
         Attempt to send a heartbeat message.
         """
