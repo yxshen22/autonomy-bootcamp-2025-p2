@@ -76,7 +76,7 @@ class Telemetry:
     def create(
         cls,
         connection: mavutil.mavfile,
-        telemetry_timeout_period,
+        telemetry_timeout_period: float,
         local_logger: logger.Logger,
     ) -> tuple[bool, "Telemetry | None"]:
         """
