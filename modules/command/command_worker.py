@@ -71,7 +71,7 @@ def command_worker(
     if not result:
         local_logger.error("Failed to create Command object", True)
         return
-    
+
     assert command_obj is not None
 
     # Main loop: do work.

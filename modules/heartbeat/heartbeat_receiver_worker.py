@@ -60,7 +60,7 @@ def heartbeat_receiver_worker(
     if not result:
         local_logger.error("Failed to create Heartbeat Receiver", True)
         return
-    
+
     assert receiver is not None
 
     # Main loop: do work.

@@ -56,9 +56,9 @@ def telemetry_worker(
     if not result:
         local_logger.error("Failed to create Telemetry object", True)
         return
-    
+
     assert telemetry_obj is not None
-    
+
     # Main loop: do work.
     while not controller.is_exit_requested():
         controller.check_pause()
