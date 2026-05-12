@@ -49,9 +49,11 @@ def heartbeat_sender_worker(
     # =============================================================================================
     # Instantiate class object (heartbeat_sender.HeartbeatSender)
     result, sender = heartbeat_sender.HeartbeatSender.create(connection, heartbeat_period)
-    if not result or sender is None:
+    if not result:
         local_logger.error("Failed to create HeartbeatSender", True)
         return
+
+    assert sender is not None
 
     # Main loop: do work.
     while not controller.is_exit_requested():
