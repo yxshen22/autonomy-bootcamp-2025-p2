@@ -60,6 +60,7 @@ def heartbeat_sender_worker(
         controller.check_pause()
         start = time.time()
         sender.run(heartbeat_period)
+        local_logger.info("Heartbeat sent", True)
         elapsed = time.time() - start
         time.sleep(
             max(0, heartbeat_period - elapsed)
