@@ -68,9 +68,11 @@ def command_worker(
         turning_speed,
         local_logger,
     )
-    if not result or command_obj is None:
+    if not result:
         local_logger.error("Failed to create Command object", True)
         return
+    
+    assert command_obj is not None
 
     # Main loop: do work.
     while not controller.is_exit_requested():

@@ -57,14 +57,17 @@ def heartbeat_receiver_worker(
     result, receiver = heartbeat_receiver.HeartbeatReceiver.create(
         connection, heartbeat_period, disconnect_threshold, local_logger
     )
-    if not result or receiver is None:
+    if not result:
         local_logger.error("Failed to create Heartbeat Receiver", True)
         return
+    
+    assert receiver is not None
 
     # Main loop: do work.
     while not controller.is_exit_requested():
         controller.check_pause()
         status = receiver.run(heartbeat_period)
+        local_logger.info(status, True)
         output_queue.queue.put(status)
 
 
